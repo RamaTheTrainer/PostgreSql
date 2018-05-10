@@ -1,0 +1,102 @@
+select * from employee
+insert into employee (eno, ename, salary) values(1005,'Ranga', 3000)
+insert into employee (eno, ename, salary) values(1006,'Reshmi', 3100)
+
+select * from employee where city is  null
+
+update employee set city = 'Delhi' where eno = 1006
+
+insert into employee values
+(1007,'Manoj',30,1007,'Hyd',2100),
+(1008,'Mahesh',40,1007,'Hyd',2100),
+(1009,'Aksah',30,1007,'Delhi',2100),
+(1010,'harish',30,1006,'Bang',2100)
+
+
+select * from employee
+
+select * from employee order by ename asc
+select * fro
+sm employee order by ename desc
+
+select ceil(-42.8)
+select sqrt(625)
+select power(2,5)
+select * from Employee
+
+sum()
+
+select sum(salary) from employee
+select avg(salary) from employee
+min()
+max()
+count()
+select count(distinct City) from Employee
+select * from employee
+
+select * from employee
+update employee set deptid = 40 where eno =1006
+
+select deptid, count(eno) from employee group by deptid 
+select city , count(eno) from employee group by city 
+select deptid, sum(salary) from employee group by deptid
+
+select deptid, sum(salary) from employee 
+where deptid>20
+group by deptid
+
+
+select deptid, sum(salary) from employee 
+group by deptid
+
+select deptid, count(eno) from employee group by deptid having count(eno)>2
+
+select deptid, sum(salary) from employee 
+group by deptid having sum(salary) >'5000'
+
+create table course (cid int constraint pk primary key , 
+					 cname varchar(30) NOT NULL)
+drop table course 
+
+create table course (cid int primary key , 
+					 cname varchar(30) NOT NULL)
+
+
+create table course (cid int primary key , 
+					 cname varchar(30) NOT NULL Unique)
+					 
+					 
+insert into course values(20, 'CEC'),(30, 'BPC'),(40, 'MEC')
+
+
+select * from course
+
+
+create table Student (
+	sid int primary key , 
+	sname varchar(30) not null ,
+	cid int references course(cid), 
+	mobile int unique
+)
+
+drop table student 
+
+
+create table Student (
+	sid int primary key , 
+	sname varchar(30) not null ,
+	cid int ,  
+	mobile int unique,
+	age int check (age >18),
+	foreign key(cid) references course(cid)
+)
+
+
+
+insert into student values (1002, 'Anil',20, 4557, 25)
+
+
+drop table student 
+alter table student add age int 
+
+select * from student 
